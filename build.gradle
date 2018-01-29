@@ -1,7 +1,7 @@
 group 'io.mifos'
 
 task publishApiToMavenLocal {
-    dependsOn gradle.includedBuild('api').task(':publishToMavenLocal')
+    dependsOn gradle.includedBuild('customer-api').task(':publishToMavenLocal')
 }
 
 task publishServiceToMavenLocal {
@@ -30,7 +30,7 @@ task prepareForTest {
 
 task licenseFormat {
     group 'all'
-    dependsOn gradle.includedBuild('api').task(':licenseFormat')
+    dependsOn gradle.includedBuild('customer-api').task(':licenseFormat')
     dependsOn gradle.includedBuild('service').task(':licenseFormat')
     dependsOn gradle.includedBuild('component-test').task(':licenseFormat')
 }
